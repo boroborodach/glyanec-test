@@ -1,0 +1,223 @@
+.cathegory {
+  padding: 50px 0;
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    margin-bottom: 15px;
+  }
+  &__nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 140px;
+    svg {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    span {
+      @extend %proximanova_700;
+      font-size: 24px;
+      line-height: 125%;
+      text-transform: uppercase;
+    }
+  }
+  &__nav-item--active {
+    svg {
+      path {
+        fill: $colorAccent;
+      }
+    }
+    span {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $colorAccent;
+      }
+    }
+  }
+  &__ware {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__ware-item {
+    max-width: 586px;
+    max-height: 360px;    
+    text-transform: uppercase;
+    @extend %proximanova_700;
+    transition: all ease .5s;
+    & + .cathegory__ware-item {
+      margin-top: 20px;
+    }
+  }
+  &__ware-img-box {
+    max-width: 586px;
+    max-height: 300px;
+    position: relative;
+  }
+  &__ware-img {
+    object-fit: cover;
+  }
+  &__ware--hit,
+  &__ware--new,
+  &__ware--action {
+    position: absolute;
+    padding: 6px 15px 4px;
+    font-size: 10px;
+    line-height: 125%;
+    color: #fff;
+    background-color: $colorText;
+    top: 10px;
+    left: 0;
+  }
+  &__ware--action {
+    background-color: #FF1B1B;
+    top: 38px;
+  }
+  &__ware-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 125%;
+  }
+  &__ware-title {    
+    font-size: 13px;
+    line-height: 125%;
+  }
+  &__ware-price {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__ware-price--action {
+    color: #FF1B1B;
+    & + .cathegory__ware-price--current {
+      display: inline-block;
+      color: #BCBDBB;
+      text-decoration: line-through;
+      font-size: 12px;
+      line-height: 125%;
+      margin-left: 10px;
+    }
+  }
+  &__ware-item:hover {
+    transform: translateY(-25px);
+    .cathegory__ware-info {
+      color: #fff;
+      background-color: $colorAccent;
+    }
+    .cathegory__ware-price--action,
+    .cathegory__ware-price--current {
+      color: #fff;
+    }
+  }
+  &__share {
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+    @extend %proximanova_700;
+    color: #fff;
+    background-color: $colorAccent;
+    font-size: 18px;
+    line-height: 51px;
+    padding: 0 46px;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+}
+
+@media (min-width: 375px) {
+  .cathegory {
+    &__nav-list {
+      display: grid;
+      grid-template: repeat(3, 160px) / repeat(2, 1fr);
+      align-content: end;
+      margin-bottom: 20px;
+    }
+    &__ware-info {
+      flex-direction: row;
+    }
+
+  }
+}
+
+@media (min-width: 576px) {
+  .cathegory {
+    &__nav-list {
+      grid-template: repeat(2, 160px) / repeat(3, 1fr);
+    }
+    &__ware--new,
+    &__ware--hit,
+    &__ware--action {
+      font-size: 18px;
+    }
+    &__ware--action {
+      top: 47px;
+    }
+    &__ware-price--action + .cathegory__ware-price--current {
+      font-size: 18px;
+      line-height: 125%;
+    }
+    &__ware-title,
+    &__ware-price--current,
+    &__ware-price--action {
+      font-size: 24px;
+      line-height: 125%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .cathegory {
+    &__ware {
+      display: grid;
+      grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+      column-gap: 5px;
+      row-gap: 15px;
+      align-items: start;
+    }
+    &__ware-info {
+      align-items: start;
+    }
+    &__ware-item + .cathegory__ware-item {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .cathegory {
+    &__nav-list {
+      grid-template: repeat(1, 160px) / repeat(6, 1fr);
+      margin-bottom: 87px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .cathegory {
+    &__ware {
+      grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+      column-gap: 30px;
+      row-gap: 50px;
+    }
+  }
+}

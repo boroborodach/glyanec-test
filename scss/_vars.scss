@@ -1,0 +1,45 @@
+$colorText: #1E2E36;
+$colorAccent: #44C697;
+$colorBG: #e5e5e5;
+
+%proximanova_700 {
+  font-family: 'proximanova_bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+%proximanova_400 {
+  font-family: 'proximanova_regular', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin disabledSliderBTN {
+  background-color: transparent;
+  path {
+    fill: $colorBG;
+  }
+}
+
+%hoverMenuNav {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  background-color: $colorAccent;
+  animation-name: hoverMenuNav;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hoverMenuNav {
+  0% {
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}

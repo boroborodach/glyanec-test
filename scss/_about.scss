@@ -1,0 +1,75 @@
+.about {
+  padding: 20px 0;
+  overflow: hidden;
+  position: relative;
+  &__bg {
+    width: 1407px;
+    height: 605px;
+    position: absolute;
+    left: 398px;
+    top: 130px;
+    z-index: -1;
+  }
+  &__img {
+    object-fit: cover;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__content {
+    max-width: calc(791px + 15px);
+    padding: 25px 15px 25px 20px;
+    border-right: 15px solid $colorAccent;
+    background-color: #fff;
+    margin: 0 auto;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 125%;
+    span {
+      @extend %proximanova_700;
+      color: $colorAccent;
+    }
+    & + .about__text {
+      margin-top: 15px;
+    }
+  }
+  &__bg {
+    position: absolute;
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .about {
+    &__content {
+      padding: 50px 30px 50px 51px;
+    }
+    &__text {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .about {
+    padding: 0;
+    &__title {
+      margin-bottom: 0;
+    }
+    &__bg {
+      display: block;
+    }
+    &__content {
+      margin: 150px auto 100px -15px;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .about {
+    &__bg {
+      left: 477px;
+    }
+  }
+}

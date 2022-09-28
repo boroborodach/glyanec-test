@@ -1,0 +1,77 @@
+body {
+  background-color: #e5e5e5;
+  @extend %proximanova_400;
+  color: $colorText;
+  font-size: 18px;
+  line-height: 22px;
+  overflow-x: hidden;
+}
+
+a {
+  color: $colorText;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.container {
+  max-width: 1848px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.section__title {
+  @extend %proximanova_700;
+  font-size: 40px; 
+  line-height: 60px;
+  text-align: center;
+  span {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 50px;
+      background-color: $colorAccent;
+      left: -3px;
+      top: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.scroll-top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  left: 200px;
+  bottom: 58px;
+  transition: all .5s;
+  opacity: 1;
+}
+
+.scroll-top--hide {
+  left: -200px;
+  opacity: 0;
+}
+
+@media (min-width: 375px) {
+  .scroll-top {
+    left: 278px;
+  }
+}
+
+@media (min-width: 576px) {
+  .scroll-top {
+    left: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  .scroll-top {
+    left: 5px;
+  }
+}
